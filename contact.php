@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Accueil || MIRAMAP</title>
+    <title>Contact || MIRAMAP</title>
 	<!-- All css Files Here -->
 	<!-- fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500' rel='stylesheet' type='text/css'>
@@ -69,7 +69,7 @@
 				<div class="row mega_relative">
 					<div class="col-xs-12 col-sm-2">
 						<div class="logo head_lo">
-							<a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
+							<a href="index.php"><img src="images/logo.png" alt="Logo" /></a>
 						</div>
 					</div>
 					<div class="col-sm-10">
@@ -98,7 +98,7 @@
 			<div class="mobile-menu">
 				<nav id="dropdown">
 					<ul>
-						<li><a href="index.html">Accueil</a></li>
+						<li><a href="index.php">Accueil</a></li>
 						<li><a href="#">A propos</a></li>
 						<li><a href="#">Les produits</a></li>
 						<li><a href="#">Les Magasins</a></li>
