@@ -80,7 +80,7 @@
 									<li><a href="#">A propos</a></li>
 									<li><a href="#">Les Produits</i></a></li>
 									<li><a href="#">Les Magasins</a></li>
-									<li><a href="#">CONTACT</a></li>
+									<li><a href="contact.php">CONTACT</a></li>
 									<li class="shop_icon">
 										<a href="#"><img src="images/menu_icon_img.png" alt="" /></a>
 										<span>10</span>
@@ -144,7 +144,7 @@
 						</div>
 						<div class="footer_icon">
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=100010052358058&fref=ts"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
