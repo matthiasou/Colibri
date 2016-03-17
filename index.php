@@ -38,14 +38,14 @@
 					<div class="col-md-6">
 						<div class="header_top_left float-left">
 							<ul class="social_icon">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=100010052358058&fref=ts"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 							</ul>
 							<ul class="social_others">
-								<li><a><i class="fa fa-phone"></i>+235392010</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o"></i>support@miramap.fr</a></li>
+								<li><a><i class="fa fa-phone"></i>04 81 91 60 51</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>contact@miramap.org</a></li>
 							</ul>
 						</div>
 					</div>
@@ -137,8 +137,8 @@
 						<div class="footer_link address">
 							<p>MIRAMAP</p>
 							<ul>
-								<li><span>Adresse: </span> 42 boulevard de la Seine Nanterre</li>
-								<li><span>Telephone: </span>02 31 22 31 07</li>
+								<li><span>Adresse: </span> 58 rue Raulin - 69007 Lyon</li>
+								<li><span>Telephone: </span>04 81 91 60 51</li>
 								<li><span>Email: </span>contact@miramap.fr</li>
 							</ul>
 						</div>
