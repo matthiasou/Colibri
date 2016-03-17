@@ -80,7 +80,7 @@
 									<li><a href="#">A propos</a></li>
 									<li><a href="#">Les Produits</i></a></li>
 									<li><a href="#">Les Magasins</a></li>
-									<li><a href="contact.php">CONTACT</a></li>
+									<li><a href="#">CONTACT</a></li>
 									<li class="shop_icon">
 										<a href="#"><img src="images/menu_icon_img.png" alt="" /></a>
 										<span>10</span>
@@ -116,11 +116,11 @@
 	
 	
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	
-	
-	
-	
-	
+
+
+
+
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.2584980872784!2d4.831613915030959!3d45.745963422619745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea49c7cab45b%3A0x32c9d885030e6d24!2sMiramap!5e0!3m2!1sfr!2sfr!4v1458205761587" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 	
 	
 	
