@@ -53,7 +53,7 @@
 						<div class="header_top_right text-right">
 							<ul>
 								<li><a href="#">Mon Compte</a></li>
-								<li><a href="#">S'enregister / Connexion</a></li>
+								<li><a href="#signup" data-toggle="modal" data-target=".bs-modal-sm">S'enregister / Connexion</a></li>
 								<li class="searchbox">
 									<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
 									<input type="submit" class="searchbox-submit" value="">
@@ -110,9 +110,108 @@
 	</div>
 	<!-- mobile-menu-area end -->
 	<!-- Header-Section-End  -->
+	<!-- Modal -->
+	<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<br>
+				<div class="bs-example bs-example-tabs">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active"><a href="#signin" data-toggle="tab">Connexion</a></li>
+						<li class=""><a href="#signup" data-toggle="tab">S'inscrire</a></li>
+					</ul>
+				</div>
+				<div class="modal-body">
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade active in" id="signin">
+							<form class="form-horizontal">
+								<fieldset>
+									<!-- Sign In Form -->
+									<!-- Text input-->
+									<div class="control-group">
+										<label class="control-label" for="userid">Email:</label>
+										<div class="controls">
+											<input required="" id="userid" name="userid" type="text" class="form-control" placeholder="Entrez votre adresse mail" class="input-medium" required="">
+										</div>
+									</div>
+
+									<!-- Password input-->
+									<div class="control-group">
+										<label class="control-label" for="passwordinput">Mot de passe:</label>
+										<div class="controls">
+											<input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
+										</div>
+									</div>
+
+									<!-- Button -->
+									<div class="control-group">
+										<label class="control-label" for="signin"></label>
+										<div class="controls">
+											<button id="signin" name="signin" class="btn btn-success">Se connecter</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="signup">
+							<form class="form-horizontal">
+								<fieldset>
+									<!-- Sign Up Form -->
+									<!-- Text input-->
+									<div class="control-group">
+										<label class="control-label" for="Email">Email:</label>
+										<div class="controls">
+											<input id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+										</div>
+									</div>
+
+									<!-- Text input-->
+									<div class="control-group">
+										<label class="control-label" for="userid">Alias:</label>
+										<div class="controls">
+											<input id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
+										</div>
+									</div>
+
+									<!-- Password input-->
+									<div class="control-group">
+										<label class="control-label" for="password">Mot de passe:</label>
+										<div class="controls">
+											<input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+											<em>1-8 Characters</em>
+										</div>
+									</div>
+
+									<!-- Text input-->
+									<div class="control-group">
+										<label class="control-label" for="reenterpassword">Re-Mot de passe:</label>
+										<div class="controls">
+											<input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+										</div>
+									</div>
+
+									<!-- Button -->
+									<div class="control-group">
+										<label class="control-label" for="confirmsignup"></label>
+										<div class="controls">
+											<button id="confirmsignup" name="confirmsignup" class="btn btn-success">S'inscrire</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<center>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
 	
-	
-	
+	<!-- Fin Modal -->
 	
 	
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
