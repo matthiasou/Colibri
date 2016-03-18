@@ -55,14 +55,50 @@
 							<ul>
 								<?php
 								if(isset($_SESSION['mail'])){?>
-									<li><a href="#">Mon Compte</a></li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Mon Compte
+											<b class="caret"></b></a>
+										<ul class="dropdown-menu">
+											<li>
+												<div class="navbar-content">
+													<div class="row">
+														<div class="col-md-5">
+															<img src="http://placehold.it/120x120"
+																 alt="Alternate Text" class="img-responsive" />
+															<p class="text-center small">
+																<a href="#">Changer Photo</a></p>
+														</div>
+														<div class="col-md-7">
+															<div class="test"><?php echo $_SESSION["user"]["nom_utilisateur"]." ";?><?php echo $_SESSION["user"]["prenom_utilisateur"]; ?></div>
+															<p class="text-muted small">
+																<?php echo $_SESSION["user"]["mail"];?></p>
+															<div class="divider">
+															</div>
+															<a type="submit" data-toggle="modal" data-target="#modifUser" class="btn btn-primary btn-sm active">Voir Profil</a>
+														</div>
+													</div>
+												</div>
+												<div class="navbar-footer">
+													<div class="navbar-footer-content">
+														<div class="row">
+															<div class="col-md-6">
+																<a href="#" class="btn btn-default btn-sm">Modifier Password</a>
+															</div>
+															<div class="col-md-6">
+																<a href="deconnexion.php" class="btn btn-default btn-sm pull-right">Déconnexion</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
 									<li><a href="deconnexion.php" >Déconnexion</a></li>
 								<?php } else{ ?>
 
 								<li><a href="#signup" data-toggle="modal" data-target=".bs-modal-sm">S'enregister / Connexion</a></li>
 								<?php } ?>
 								<li class="searchbox">
-									<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+									<input type="search" placeholder="Rechercher......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
 									<input type="submit" class="searchbox-submit" value="">
 									<span class="searchbox-icon"><i class="fa fa-search"></i></span>
 								</li>
@@ -219,6 +255,60 @@
 	</div>
 	
 	<!-- Fin Modal -->
+
+
+	<!-- Modal modifier utilisateur -->
+	<div class="modal fade" id="modifUser" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h3 style="color: black;" class="modal-title" id="lineModalLabel">Modification utilisateur</h3>
+				</div>
+				<div class="modal-body">
+
+					<!-- content goes here -->
+					<form method="post" action="modifierProfil.php">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Nom</label>
+							<input name="nom" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION["user"]["nom_utilisateur"];?>">
+							<input type="hidden" name="id" value="<?php echo $_SESSION["user"]["idUTILISATEUR"];?>">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPrenom">Prénom</label>
+							<input name="prenom" type="text" class="form-control" id="exampleInputPrenom" value="<?php echo $_SESSION["user"]["prenom_utilisateur"];?>">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputRole">Rôle</label>
+							<input name="role" type="text" class="form-control" id="exampleInputRole" value="<?php echo $donnees['role'];?>">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputStatus">Status</label>
+							<input name="status" type="text" class="form-control" id="exampleInputStatus" value="<?php echo $donnees['status'];?>">
+						</div>
+
+						<button type="submit" class="btn btn-default">Valider</button>
+
+					</form>
+
+				</div>
+
+				<div class="modal-footer">
+					<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-default" data-dismiss="modal" role="button">Annuler</button>
+						</div>
+						<div class="btn-group btn-delete hidden" role="group">
+							<button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Supprimer</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Fin modal modif user -->
 	
 	
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

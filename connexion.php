@@ -20,7 +20,7 @@ catch (Exception $e)
 $password_hache = $_POST['password'];
 
 // Vérification des identifiants
-$req = $bdd->prepare('SELECT idUTILISATEUR FROM UTILISATEUR WHERE mail = :mail AND password = :password');
+$req = $bdd->prepare('SELECT * FROM UTILISATEUR WHERE mail = :mail AND password = :password');
 $req->execute(array(
     'mail' => $_POST['mail'],
     'password' => $password_hache));
@@ -36,6 +36,9 @@ else
     session_start();
     $_SESSION['id'] = $resultat['idUTILISATEUR'];
     $_SESSION['mail'] = $_POST['mail'];
+    $_SESSION['user'] = $resultat;
+
     echo 'Vous êtes connecté !';
 }
 header("Location: /colibri/index.php");
+//var_dump($_SESSION['user']['nom_utilisateur']);
