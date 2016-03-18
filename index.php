@@ -270,7 +270,7 @@
 					<!-- content goes here -->
 					<form method="post" action="modifierProfil.php">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Nom</label>
+							<label for="exampleInpuNom">Nom</label>
 							<input name="nom" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION["user"]["nom_utilisateur"];?>">
 							<input type="hidden" name="id" value="<?php echo $_SESSION["user"]["idUTILISATEUR"];?>">
 						</div>
@@ -279,12 +279,42 @@
 							<input name="prenom" type="text" class="form-control" id="exampleInputPrenom" value="<?php echo $_SESSION["user"]["prenom_utilisateur"];?>">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputRole">Rôle</label>
-							<input name="role" type="text" class="form-control" id="exampleInputRole" value="<?php echo $donnees['role'];?>">
+							<label for="exampleInputEmail">Email</label>
+							<input name="email" type="text" class="form-control" id="exampleInputRole" value="<?php echo $_SESSION["user"]["mail"];?>">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputStatus">Status</label>
-							<input name="status" type="text" class="form-control" id="exampleInputStatus" value="<?php echo $donnees['status'];?>">
+							<label for="exampleInputAdresse">Adresse</label>
+							<input name="adresse" type="text" class="form-control" id="exampleInputRole" value="<?php echo $_SESSION["user"]["adresse"];?>">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputAdresse">Ville</label>
+							<select class="form-control" id="sel1">
+								<?php
+								try{
+									$bdd = new PDO('mysql:host=localhost;dbname=colibri;charset=utf8', 'root', '');
+								}
+								catch (Exception $e)
+								{
+									die('Erreur : ' . $e->getMessage());
+								} ?>
+
+
+
+
+
+								<option><?php $req = $bdd->prepare('SELECT * FROM VILLE');
+
+									$resultat = $req->fetch();
+
+										var_dump($resultat);
+									 ?></option>
+								<option>3</option>
+								<option>4</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputStatus">Amap</label>
+							<input name="amap" type="text" class="form-control" id="exampleInputStatus" value="amap">
 						</div>
 
 						<button type="submit" class="btn btn-default">Valider</button>
