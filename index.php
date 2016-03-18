@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -52,8 +53,14 @@
 					<div class="col-md-6">
 						<div class="header_top_right text-right">
 							<ul>
-								<li><a href="#">Mon Compte</a></li>
+								<?php
+								if(isset($_SESSION['mail'])){?>
+									<li><a href="#">Mon Compte</a></li>
+									<li><a href="deconnexion.php" >Déconnexion</a></li>
+								<?php } else{ ?>
+
 								<li><a href="#signup" data-toggle="modal" data-target=".bs-modal-sm">S'enregister / Connexion</a></li>
+								<?php } ?>
 								<li class="searchbox">
 									<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
 									<input type="submit" class="searchbox-submit" value="">
@@ -124,14 +131,14 @@
 				<div class="modal-body">
 					<div id="myTabContent" class="tab-content">
 						<div class="tab-pane fade active in" id="signin">
-							<form class="form-horizontal">
+							<form method="post" action="connexion.php" id="signin" role="form" class="form-horizontal">
 								<fieldset>
 									<!-- Sign In Form -->
 									<!-- Text input-->
 									<div class="control-group">
 										<label class="control-label" for="userid">Email:</label>
 										<div class="controls">
-											<input required="" id="userid" name="userid" type="text" class="form-control" placeholder="Entrez votre adresse mail" class="input-medium" required="">
+											<input required="" id="mail" name="mail" type="text" class="form-control" placeholder="Entrez votre adresse mail" class="input-medium" required="">
 										</div>
 									</div>
 
@@ -139,7 +146,7 @@
 									<div class="control-group">
 										<label class="control-label" for="passwordinput">Mot de passe:</label>
 										<div class="controls">
-											<input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
+											<input required="" id="password" name="password" class="form-control" type="password" placeholder="********" class="input-medium">
 										</div>
 									</div>
 
@@ -147,7 +154,7 @@
 									<div class="control-group">
 										<label class="control-label" for="signin"></label>
 										<div class="controls">
-											<button id="signin" name="signin" class="btn btn-success">Se connecter</button>
+											<button type="submit" id="signin" name="signin" class="btn btn-success">Se connecter</button>
 										</div>
 									</div>
 								</fieldset>
