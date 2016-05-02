@@ -881,9 +881,13 @@ tr#total_colspan td .checkPageBtn {
 /*-------------------------------
 [1. GoogleMap ]
 --------------------------------*/
-#googleMap{
+
+#map{
   height:600px;
+  text-align: center;
+    color: black;
 }
+
 /*-------------------------------
 [2. Contact-Us ]
 --------------------------------*/
