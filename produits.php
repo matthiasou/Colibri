@@ -130,7 +130,7 @@
                             <li><a href="index.php">Accueil</a></li>
                             <li><a href="#">A propos</a></li>
                             <li><a href="#">Les Produits</i></a></li>
-                            <li><a href="#">Les Magasins</a></li>
+                            <li><a href="magasins.php">Les Magasins</a></li>
                             <li><a href="contact.php">CONTACT</a></li>
                             <li class="shop_icon">
                                 <a href="#"><img src="images/menu_icon_img.png" alt="" /></a>
