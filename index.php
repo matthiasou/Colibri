@@ -121,11 +121,11 @@
 								<ul>
 									<li><a href="index.php">Accueil</a></li>
 									<li><a href="#">A propos</a></li>
-									<li><a href="#">Les Produits</i></a></li>
+									<li><a href="produits.php">Les Produits</i></a></li>
 									<li><a href="#">Les Magasins</a></li>
 									<li><a href="contact.php">CONTACT</a></li>
 									<li class="shop_icon">
-										<a href="#"><img src="images/menu_icon_img.png" alt="" /></a>
+										<a href="cart.php"><img src="images/menu_icon_img.png" alt="" /></a>
 										<span>10</span>
 									</li>
 								</ul>
@@ -342,9 +342,9 @@
 	
 	
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	
-	
-	
+
+
+
 	
 	
 	
@@ -382,7 +382,7 @@
 							<p>Compte </p>
 							<ul>
 								<li><a href="#">Mon compte</a></li>
-								<li><a href="cart.html">Panier</a></li>
+								<li><a href="cart.php">Panier</a></li>
 								<li><a href="#">Achats</a></li>
 								<li><a href="#">Code promo</a></li>
 								<li><a href="#">Informations</a></li>
