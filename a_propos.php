@@ -339,20 +339,39 @@
 	</div>
 
 	<!-- Fin modal modif user -->
-	
-	
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+	<br><br>
 
 
 
-	
-	
-	
-	
-	
-	
-	
-	
+
+	<div class="container">
+	<p style="font-size: large"> <b>U</b>ne association pour le maintien d'une agriculture paysanne, ou AMAP, est, en France,
+		un partenariat de proximité entre un groupe de consommateurs et une exploitation locale (généralement une ferme),
+		débouchant sur un partage de récolte régulier (le plus souvent hebdomadaire) composée des produits de la ferme.
+		L'AMAP est un contrat solidaire, basé sur un engagement financier des consommateurs, qui paient à l’avance
+		la totalité de leur consommation sur une période définie. Ce système fonctionne donc sur le principe de
+		la confiance et de la responsabilité du consommateur ; il représente une forme de circuit court de distribution.<p>
+
+		<p style="font-size: large"> Le terme « AMAP (Association pour le Maintien de l'Agriculture Paysanne) » est
+			enregistré depuis mi-2003 à l'INPI en tant que marque française par l'association Alliance Provence.
+			L'usage de la marque passe par l'engagement du respect de la charte des AMAP inspirée de la Charte de
+			l'agriculture paysanne, éditée en mai 2003 par cette même association. En 2014, la Charte des AMAP est
+			ré-actualisée, à la suite d'un chantier et d'une réflexion participative inter-régionale coordonnée par
+			le Mouvement Inter-Régional des AMAP (MIRAMAP).<p>
+
+			<br>
+			<h5>Nos principes</h5>
+			<p style="font-size: large"><b>Une AMAP est :</b></p>
+		<p style="font-size: large"><br>- pour le consommateur, des aliments frais, de saison, souvent biologiques, produits à partir de
+				variétés végétales ou races animales de terroir ou anciennes.
+			<br><br>- un prix équitable pour les deux partenaires.
+		</p>
+
+	</div>
+
+	<br><br><br><br>
 	
 	<!-- Footer-Section-Start -->
 	<footer>
