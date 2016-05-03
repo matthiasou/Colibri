@@ -168,7 +168,7 @@
                         <p>contact@miramap.org</p>
                     </div>
                     <div class="single_address">
-                        <p><span>Address:</span></p>
+                        <p><span>Adresse:</span></p>
                         <p>MIRAMAP</p>
                         <p>58 rue Rauli,</p>
                         <p>69007 Lyon</p>
