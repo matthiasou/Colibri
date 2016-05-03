@@ -366,8 +366,8 @@
 
     <!-- Title -->
     <div class="row">
-        <div class="col-lg-12">
-            <h3>Latest Features</h3>
+        <div style="color: #0f3e68">
+            <h3>Nos Paniers du moment</h3>
         </div>
     </div>
     <!-- /.row -->
