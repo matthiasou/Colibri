@@ -384,7 +384,8 @@
 
     <!-- Page Features -->
 
-
+    <form method="post" action="ajoutProduit.php">
+        <input type="hidden" name="id" value="<?php echo $produits['idProduit'];?>">
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
                 <img src="<?php echo $produits["image"];?>" alt="" />
@@ -392,15 +393,16 @@
                     <h3><?php echo $produits["libelle_produit"];?></h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <p>
-                        <a href="#" class="btn btn-primary">Acheter</a> <a class="btn btn-default"><?php echo $produits["prix"];?> €</a>
+                        <a href="ajoutProduit.php/?idProduit=<?php echo $produits['idProduit'];?>" class="btn btn-primary">Acheter</a> <a class="btn btn-default"><?php echo $produits["prix"];?> €</a>
                     </p>
                 </div>
             </div>
         </div>
         <?php
-    }
-    ?>
-    </div>
+         }
+         ?>
+    <form>
+</div>
 
 <br>
 
