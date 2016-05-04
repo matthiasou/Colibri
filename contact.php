@@ -82,7 +82,7 @@
                     <nav>
                         <ul>
                             <li><a href="index.php">Accueil</a></li>
-                            <li><a href="#">A propos</a></li>
+                            <li><a href="a_propos.php">A propos</a></li>
                             <li><a href="produits.php">Les Produits</i></a></li>
                             <li><a href="magasins.php">Les Magasins</a></li>
                             <li><a href="contact.php">CONTACT</a></li>
