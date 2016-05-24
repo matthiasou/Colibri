@@ -126,7 +126,14 @@
                             <li><a href="contact.php">CONTACT</a></li>
                             <li class="shop_icon">
                                 <a href="cart.php"><img src="images/menu_icon_img.png" alt="" /></a>
-                                <span>10</span>
+                                <span>
+                                    <?php
+                                        if ($_SESSION['produits'] == null){
+                                            $_SESSION['produits'] = array();
+                                        }
+                                        echo sizeof($_SESSION['produits']);
+                                    ?>
+                                </span>
                             </li>
                         </ul>
                     </nav>
