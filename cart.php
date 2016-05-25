@@ -44,7 +44,7 @@
 				foreach($data as $produits){ ?>
 				<tr>
 					<td class="cart_product">
-						<a href=""><img width="20%" src="<?php echo $produits['image']; ?>" alt=""></a>
+						<a href=""><img src="<?php echo $produits['image_mini']; ?>" alt=""></a>
 					</td>
 					<td class="cart_description">
 						<h4><a><?php echo $produits['libelle_produit'];?></a></h4>
