@@ -28,8 +28,6 @@
 					<td class="image">Item</td>
 					<td class="description">Description</td>
 					<td class="price">Prix</td>
-					<td class="quantity">Quantité</td>
-					<td class="total">Total</td>
 					<td></td>
 				</tr>
 				</thead>
@@ -53,29 +51,37 @@
 					<td class="cart_price">
 						<p><?php echo $produits['prix'];?> €</p>
 					</td>
-					<td class="cart_quantity">
-						<div class="cart_quantity_button">
-							<a class="cart_quantity_up" href=""> + </a>
-							<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-							<a class="cart_quantity_down" href=""> - </a>
-						</div>
-					</td>
-					<td class="cart_total">
-						<p class="cart_total_price">$59</p>
-					</td>
 					<td class="cart_delete">
-						<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+						<a class="cart_quantity_delete" href="sup_panier.php/?idProduit=<?php echo $produits['idProduit'];?>"><i class="fa fa-times"></i></a>
 					</td>
 				</tr>
 					<?php
 					}
 					}
 					?>
+				<tr>
+					<td class="cart_product">
+						<a href=""><img src="ici" alt=""></a>
+					</td>
+					<td class="cart_description">
+					</td>
+					<td class="cart_price">
+						<h4><a>
+								TOTAL: <?php
+				echo ' €';
+				?>
+						</h4></a>
+					</td>
+					<td class="cart_delete">
+					</td>
+				</tr>
 				</tbody>
 			</table>
 		</div>
+        <p style="text-align: right"><a href="#" class="btn btn-primary btn-large">Valider</a>
 	</div>
 </section> <!--/#cart_items-->
+
 <br><br><br><br>
 
 
