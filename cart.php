@@ -46,7 +46,7 @@
 					</td>
 					<td class="cart_description">
 						<h4><a><?php echo $produits['libelle_produit'];?></a></h4>
-						<p>Web ID: 1089772</p>
+						<p>Contrat ID: 1089772</p>
 					</td>
 					<td class="cart_price">
 						<p><?php echo $produits['prix'];?> €</p>
@@ -77,10 +77,18 @@
 				</tr>
 				</tbody>
 			</table>
+             <p> <input type="checkbox" autocomplete=""> Cocher la case si vous acceptez de passer les contrats ci-dessus </p>
 		</div>
-        <p style="text-align: right"><a href="#" class="btn btn-primary btn-large">Valider</a>
+
+
+
+        <p style="text-align: right"><a href="paiement.php" class="btn btn-primary btn-large">Valider</a>
 	</div>
 </section> <!--/#cart_items-->
+
+
+
+
 
 <br><br><br><br>
 

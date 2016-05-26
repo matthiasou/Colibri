@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
                     <div class="copyright">
-                        <p>Copyright 2015 <a href="http://designscrazed.org/">Miramap</a> All rights reserved</p>
+                        <p>Copyright 2016 <a href="http://designscrazed.org/">Miramap</a> All rights reserved</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
