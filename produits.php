@@ -16,8 +16,10 @@
     <!-- Jumbotron Header -->
     <header class="jumbotron hero-spacer">
         <h1>Nos produits</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-        <p><a class="btn btn-primary btn-large">Call to action!</a>
+        <p>Voici les différents paniers du moment. Pour pouvoir passer commande <b>vous devez être connecté<b></b> au site</p>
+        <?php if(!isset($_SESSION['mail'])){ ?>
+        <p><a href="#signup" data-toggle="modal" data-target=".bs-modal-sm" class="btn btn-primary btn-large">Connexion</a>
+        <?php } ?>
         </p>
     </header>
 
@@ -51,9 +53,12 @@
                 <div class="caption">
                     <h3><?php echo $produits["libelle_produit"];?></h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
                     <p>
-                        <a href="ajoutProduit.php/?idProduit=<?php echo $produits['idProduit'];?>" class="btn btn-primary">Acheter</a> <a class="btn btn-default"><?php echo $produits["prix"];?> €</a>
+
+                        <?php if(isset($_SESSION['mail'])){ ?>  <a href="ajoutProduit.php/?idProduit=<?php echo $produits['idProduit'];?>" class="btn btn-primary">Acheter</a> <?php } ?><a class="btn btn-default"><?php echo $produits["prix"];?> €</a>
                     </p>
+
                 </div>
             </div>
         </div>

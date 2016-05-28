@@ -81,7 +81,7 @@
                                                 <div class="navbar-footer-content">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <a href="#" class="btn btn-default btn-sm">Modifier Password</a>
+                                                            <a href="#" class="btn btn-default btn-sm">Administration</a>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <a href="deconnexion.php" class="btn btn-default btn-sm pull-right">Déconnexion</a>

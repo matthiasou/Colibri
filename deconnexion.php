@@ -17,4 +17,4 @@ session_start();
 unset($_SESSION["id"]);
 unset($_SESSION["mail"]);
 session_destroy();
-header("Location: /colibri/index.php");
+header("Location: /colibri/produits.php");

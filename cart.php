@@ -21,6 +21,14 @@
 				<li class="active">Shopping Cart</li>
 			</ol>
 		</div>
+
+		<?php if ($_SESSION['produits'] == null){?>
+			<h3 style="color: #0f3e68">Votre panier est vide !</h3>
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+		<?php }
+		else{
+
+		?>
 		<div class="table-responsive cart_info">
 			<table class="table table-condensed">
 				<thead>
@@ -61,7 +69,7 @@
 					?>
 				<tr>
 					<td class="cart_product">
-						<a href=""><img src="ici" alt=""></a>
+
 					</td>
 					<td class="cart_description">
 					</td>
@@ -82,9 +90,12 @@
 
 
 
+
         <p style="text-align: right"><a href="paiement.php" class="btn btn-primary btn-large">Valider</a>
 	</div>
+	<?php } ?>
 </section> <!--/#cart_items-->
+
 
 
 

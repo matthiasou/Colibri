@@ -1,20 +1,28 @@
 <?php include("header.php"); ?>
 
-<br><br><br><br><br><br><br><br>
-    <div class="col-xs-12 col-md-4" style="  margin-left: auto; color:#122b40; font-size: 12pt; line-height: 2em;">
-        <p><h3>Paiement:</h3>
-        <ul>
-            <li>Vous pouvez payer par différents moyens</li>
-            <li>Paypal</li>
-            <li>Virement bancaire</li>
-            <li>Chèque</li>
-            <li>A la remise des paniers</li>
-        </ul>
-        </p>
+<br><br><br><br>
+<section id="cart_items">
+	<div class="container">
+		<div class="breadcrumbs">
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li class="active">Paiement</li>
+			</ol>
+		</div>
+        <div class="col-xs-12 col-md-4" style="  margin-left: auto; color:#122b40; font-size: 12pt; line-height: 2em;">
+            <p><h3>Paiement:</h3>
+            <ul>
+                <li>Vous pouvez payer par différents moyens</li>
+                <li>Paypal</li>
+                <li>Virement bancaire</li>
+                <li>Chèque</li>
+                <li>A la remise des paniers</li>
+            </ul>
+            </p>
 
 
-    </div>
-    <div class="col-xs-12 col-md-8"
+        </div>
+        <div class="col-xs-12 col-md-8"
 
 
         <!-- CREDIT CARD FORM STARTS HERE -->
@@ -100,8 +108,18 @@
 
 
     </div>
+	</div>
+
+</section> <!--/#cart_items-->
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
 <?php include("footer.php"); ?>

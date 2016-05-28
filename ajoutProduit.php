@@ -32,4 +32,4 @@ session_start();
 array_push($_SESSION['produits'],$_GET['idProduit']);
 
 //$_SESSION['id'] = $resultat['idUTILISATEUR'];
-header("Location: /colibri/produits.php");
+header("Location: /colibri/cart.php");

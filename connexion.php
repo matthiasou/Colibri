@@ -40,5 +40,5 @@ else
 
     echo 'Vous êtes connecté !';
 }
-header("Location: /colibri/index.php");
+header("Location: /colibri/produits.php");
 //var_dump($_SESSION['user']['nom_utilisateur']);
