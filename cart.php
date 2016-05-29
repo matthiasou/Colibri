@@ -18,7 +18,7 @@
 		<div class="breadcrumbs">
 			<ol class="breadcrumb">
 				<li><a href="#">Home</a></li>
-				<li class="active">Shopping Cart</li>
+				<li class="active">Panier</li>
 			</ol>
 		</div>
 
@@ -41,12 +41,14 @@
 				</thead>
 				<tbody>
 				<?php
+				$total=0;
 				foreach($_SESSION['produits'] as $prod){
 				$sql2 = "SELECT * FROM produit where idProduit = '".$prod."'";
 				$req2 = $bdd->prepare($sql2);
 				$req2->execute();
 				$data = $req2 -> fetchAll(PDO::FETCH_ASSOC);
 				//var_dump($data);
+
 				foreach($data as $produits){ ?>
 				<tr>
 					<td class="cart_product">
@@ -64,7 +66,11 @@
 					</td>
 				</tr>
 					<?php
+
 					}
+					$total = $total + $produits['prix'];
+
+
 					}
 					?>
 				<tr>
@@ -76,7 +82,8 @@
 					<td class="cart_price">
 						<h4><a>
 								TOTAL: <?php
-				echo ' €';
+								$_SESSION['total']= $total;
+								echo $total." €";
 				?>
 						</h4></a>
 					</td>

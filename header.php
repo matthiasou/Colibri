@@ -81,7 +81,7 @@
                                                 <div class="navbar-footer-content">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <a href="#" class="btn btn-default btn-sm">Administration</a>
+                                                            <a href="administration.php" class="btn btn-default btn-sm">Administration</a>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <a href="deconnexion.php" class="btn btn-default btn-sm pull-right">Déconnexion</a>
@@ -128,10 +128,11 @@
                                 <a href="cart.php"><img src="images/menu_icon_img.png" alt="" /></a>
                                 <span>
                                     <?php
-                                        if ($_SESSION['produits'] == null){
-                                            $_SESSION['produits'] = array();
+                                        if(isset($_SESSION['produits'])){
+                                            echo sizeof($_SESSION['produits']);
                                         }
-                                        echo sizeof($_SESSION['produits']);
+                                    else{echo '0';$_SESSION['produits']=array();}
+
                                     ?>
                                 </span>
                             </li>

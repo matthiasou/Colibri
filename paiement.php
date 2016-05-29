@@ -1,4 +1,8 @@
-<?php include("header.php"); ?>
+<?php
+include("header.php");
+session_start();
+?>
+
 
 <br><br><br><br>
 <section id="cart_items">
@@ -36,9 +40,11 @@
                 </div>
             </div>
             <div class="panel-body">
-                <form role="form" id="payment-form">
+                <form action="contrat.php" method="post" role="form" id="payment-form">
                     <div class="row">
                         <div class="col-xs-12">
+                            <label for="cardNumber"><h3><b>Total à régler : <?php echo $_SESSION['total']; ?> €</b></h3></label>
+                            <br>
                             <div class="form-group">
                                 <label for="cardNumber">Numéro carte</label>
                                 <div class="input-group">
