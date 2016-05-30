@@ -125,7 +125,7 @@
                             <li><a href="magasins.php">Les Magasins</a></li>
                             <li><a href="contact.php">CONTACT</a></li>
                             <li class="shop_icon">
-                                <a href="cart.php"><img src="images/menu_icon_img.png" alt="" /></a>
+                                <a class="fa fa-shopping-basket" href="cart.php"></a>
                                 <span>
                                     <?php
                                         if(isset($_SESSION['produits'])){
