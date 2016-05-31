@@ -17,7 +17,7 @@ catch (Exception $e)
 
 
 
-$sql = "INSERT INTO utilisateur (idUTILISATEUR, nom_utilisateur, prenom_utilisateur, adresse, mail, password, TYPE_UTILISATEUR_idTYPE_UTILISATEUR, AMAP_idAMAP, VILLE_idVILLE) VALUES ('', '".$_POST['ajoutNom']."', '".$_POST['ajoutPrenom']."', null, null, null,'".$_POST['ajoutRole']."', '".$_POST['ajoutAMAP']."',null)";
+$sql = "INSERT INTO utilisateur (idUTILISATEUR, nom_utilisateur, prenom_utilisateur, adresse, mail, password, TYPE_UTILISATEUR_idTYPE_UTILISATEUR, AMAP_idAMAP, VILLE_idVILLE) VALUES ('', '".$_POST['ajoutNom']."', '".$_POST['ajoutPrenom']."', '".$_POST['ajoutAdresse']."', '".$_POST['ajoutMail']."', '".$_POST['ajoutPassword']."','".$_POST['ajoutRole']."', '".$_POST['ajoutAMAP']."','".$_POST['ajoutVille']."')";
 $req = $bdd->prepare($sql);
 $req->execute();
 header("Location: /colibri/adm_utilisateurs.php");

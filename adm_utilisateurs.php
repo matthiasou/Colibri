@@ -49,12 +49,43 @@ include("header.php");?>
                             <input name="ajoutPrenom" type="text" class="form-control" id="examplePreNom" placeholder="Entrez votre prenom">
                           </div>
                           <div class="form-group">
-                            <label for="exampleRole">Rôle</label>
-                            <input name="ajoutRole" type="text" class="form-control" id="exampleRole" placeholder="Entrez votre role">
+                            <label for="examplePreNom">Adresse</label>
+                            <input name="ajoutAdresse" type="text" class="form-control" id="examplePreNom" placeholder="Adresse..">
                           </div>
                           <div class="form-group">
-                            <label for="exampleAMAP">AMAP</label>
-                            <input name="ajoutAMAP" type="text" class="form-control" id="exampleAMAP" placeholder="Entrez votre amap">
+                            <label for="examplePreNom">Mail</label>
+                            <input name="ajoutMail" type="text" class="form-control" id="examplePreNom" placeholder="adresse@email.com">
+                          </div>
+                          <div class="form-group">
+                            <label for="examplePreNom">Password</label>
+                            <input name="ajoutPassword" type="password" class="form-control" id="examplePreNom" placeholder="*******">
+                          </div>
+                          <div class="form-group">
+                           <label for="exampleRole">Rôle</label><br>
+                          <select name="ajoutRole">
+                            <?php   $reponse = $bdd->query('SELECT * FROM type_utilisateur');
+                            while ($donnees = $reponse->fetch()){?>
+                            <option value="<?php echo $donnees['idTYPE_UTILISATEUR'] ?>"><?php echo $donnees['libelle'] ?></option>
+                            <?php } ?>
+                          </select>
+                          </div>
+                          <div class="form-group">
+                           <label for="exampleRole">AMAP</label><br>
+                          <select name="ajoutAMAP">
+                            <?php   $reponse = $bdd->query('SELECT * FROM amap');
+                            while ($donnees = $reponse->fetch()){?>
+                            <option value="<?php echo $donnees['idAMAP'] ?>"><?php echo $donnees['nomAMAP'] ?></option>
+                            <?php } ?>
+                          </select>
+                          </div>
+                          <div class="form-group">
+                           <label for="exampleRole">Ville</label><br>
+                          <select name="ajoutVille">
+                            <?php   $reponse = $bdd->query('SELECT * FROM ville');
+                            while ($donnees = $reponse->fetch()){?>
+                            <option value="<?php echo $donnees['idVILLE'] ?>"><?php echo $donnees['libelle_ville'] ?></option>
+                            <?php } ?>
+                          </select>
                           </div>
                           <button type="submit" class="btn btn-default">Créer</button>
                         </form>
@@ -100,8 +131,21 @@ include("header.php");?>
                     <td><?php echo $donnees['idUTILISATEUR'];?></td>
                     <td><?php echo $donnees['nom_utilisateur'];?></td>
                     <td><?php echo $donnees['prenom_utilisateur'];?></td>
-                    <td><?php echo $donnees['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'];?> </td>
-                    <td><?php echo $donnees['AMAP_idAMAP'];?>
+                    <td>
+                    <?php
+                        $reponse2 = $bdd->query('SELECT * FROM type_utilisateur where idTYPE_UTILISATEUR ='.$donnees['TYPE_UTILISATEUR_idTYPE_UTILISATEUR']);
+                        while ($donnees2 = $reponse2->fetch()){
+                        echo $donnees2['libelle'];
+                        }
+                      ?>
+                    </td>
+                    <td>
+                    <?php
+                     $reponse3 = $bdd->query('SELECT * FROM AMAP where idAMAP ='.$donnees['AMAP_idAMAP']);
+                        while ($donnees3 = $reponse3->fetch()){
+                        echo $donnees3['nomAMAP'];
+                        }
+                    ?>
                     <td>
 					<button type="submit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#modifUser<?php echo $donnees['idUTILISATEUR'];?>">
 					<span class="fa fa-pencil fa-fw"></span>
@@ -140,16 +184,47 @@ include("header.php");?>
                 <div class="form-group">
                  <label for="exampleInputEmail1">Prenom</label>
                  <input name="prenom" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['prenom_utilisateur'];?>">
-                <input type="hidden" name="id" value="<?php echo $donnees['idUTILISATEUR'];?>">
+                <input type="hidden" name="idModif" value="<?php echo $donnees['idUTILISATEUR'];?>">
+              </div>
+               <div class="form-group">
+                 <label for="exampleInputEmail1">Adresse</label>
+                 <input name="adresse" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['adresse'];?>">
               </div>
               <div class="form-group">
-                <label for="exampleInputRole">Rôle</label>
-                <input name="role" type="text" class="form-control" id="exampleInputRole" value="<?php echo $donnees['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'];?>">
+                 <label for="exampleInputEmail1">Mail</label>
+                 <input name="mail" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['mail'];?>">
               </div>
               <div class="form-group">
-                <label for="exampleInputStatus">Amap</label>
-                <input name="status" type="text" class="form-control" id="exampleInputStatus" value="<?php echo $donnees['AMAP_idAMAP'];?>">
+                 <label for="exampleInputEmail1">Password</label>
+                 <input name="password" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['password'];?>">
               </div>
+               <div class="form-group">
+                           <label for="exampleRole">Rôle</label><br>
+                          <select name="role">
+                            <?php   $reponse6 = $bdd->query('SELECT * FROM type_utilisateur');
+                            while ($donnees6 = $reponse6->fetch()){?>
+                            <option value="<?php echo $donnees6['idTYPE_UTILISATEUR'] ?>"><?php echo $donnees6['libelle'] ?></option>
+                            <?php } ?>
+                          </select>
+                          </div>
+              <div class="form-group">
+                           <label for="exampleRole">AMAP</label><br>
+                          <select name="amap">
+                            <?php   $reponse7 = $bdd->query('SELECT * FROM amap');
+                            while ($donnees7 = $reponse7->fetch()){?>
+                            <option value="<?php echo $donnees7['idAMAP'] ?>"><?php echo $donnees7['nomAMAP'] ?></option>
+                            <?php } ?>
+                          </select>
+                          </div>
+                          <div class="form-group">
+                           <label for="exampleRole">Ville</label><br>
+                          <select name="ville">
+                            <?php   $reponse8 = $bdd->query('SELECT * FROM ville');
+                            while ($donnees8 = $reponse8->fetch()){?>
+                            <option value="<?php echo $donnees8['idVILLE'] ?>"><?php echo $donnees8['libelle_ville'] ?></option>
+                            <?php } ?>
+                          </select>
+                          </div>
 
               <button type="submit" class="btn btn-default">Valider</button>
 
