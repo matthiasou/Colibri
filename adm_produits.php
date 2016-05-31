@@ -13,9 +13,9 @@ include("header.php");?>
             <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="administration.php">Administration</a></li>
-                    <li class="active"><a href="#"><i class="fa fa-users fa-fw"></i> Utilisateurs</a></li>
-                    <li><a href="adm_produits.php"><i class="fa fa-shopping-basket fa-fw"></i> Produits</a></li>
-                    <li><a href="#"><i class="fa fa-file-text-o fa-fw"></i> Contrâts</a></li>
+                    <li><a href="adm_utilisateurs.php"><i class="fa fa-users fa-fw"></i> Utilisateurs</a></li>
+                    <li class="active" ><a href="adm_produits.php"><i class="fa fa-shopping-basket fa-fw"></i> Produits</a></li>
+                    <li><a href="#"><i class="fa fa-file-text-o fa-fw"></i> Contrats</a></li>
                     <li><a href="#"><i class="fa fa-calendar fa-fw"></i> Signaler absence</a></li>
                     <li><a href="#"><i class="fa fa-tasks fa-fw"></i> Changement AMAP</a></li>
                     <li><a href="#"><i class="fa fa-pencil fa-fw""></i> Créer/Modifier Paniers</a></li>
@@ -24,69 +24,61 @@ include("header.php");?>
                 </ul>
             </div>
             <div style="color: black " class="col-md-9 well">
-             <div style="color: #0f3e68">
-                <h4><i class="fa fa-users fa-fw"></i> Utilisateurs</h4>
+            <div style="color: #0f3e68">
+                <h4><i class="fa fa-shopping-basket fa-fw"></i> Produits</h4>
              </div>
 
             <div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">Ajouter</button></div>
 
             <br>
-            <!-- Ajout utilisateur -->
+            <!-- Ajout produit -->
             <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">—</span><span class="sr-only">Close</span></button>
-                        <h3 class="modal-title" id="lineModalLabel">Ajout Utilisateur</h3>
+                        <h3 class="modal-title" id="lineModalLabel">Ajout Produit</h3>
                     </div>
                     <div class="modal-body">
 
                         <!-- content goes here -->
-                        <form method="post" action="ajouterUtilisateur.php">
+                        <form method="post" action="ajouterProduit.php">
                           <div class="form-group">
-                            <label for="exampleNom">Nom utilisateur</label>
-                            <input name="ajoutNom" type="text" class="form-control" id="exampleNom" placeholder="Entrez votre nom">
+                            <label for="exampleNom">Libelle</label>
+                            <input name="ajoutLibelle" type="text" class="form-control" id="exampleNom" placeholder="Libelle du produit">
                           </div>
                           <div class="form-group">
-                            <label for="examplePreNom">Prenom utilisateur</label>
-                            <input name="ajoutPrenom" type="text" class="form-control" id="examplePreNom" placeholder="Entrez votre prenom">
+                            <label for="examplePreNom">Prix</label>
+                            <input name="ajoutPrix" type="text" class="form-control" id="examplePreNom" placeholder="Entrez votre prix">
                           </div>
                           <div class="form-group">
-                            <label for="examplePreNom">Adresse</label>
-                            <input name="ajoutAdresse" type="text" class="form-control" id="examplePreNom" placeholder="Adresse..">
+                            <label for="examplePreNom">URL Image</label>
+                            <input name="ajoutUrl" type="text" class="form-control" id="examplePreNom" placeholder="URL de l'image">
                           </div>
                           <div class="form-group">
-                            <label for="examplePreNom">Mail</label>
-                            <input name="ajoutMail" type="text" class="form-control" id="examplePreNom" placeholder="adresse@email.com">
-                          </div>
-                          <div class="form-group">
-                            <label for="examplePreNom">Password</label>
-                            <input name="ajoutPassword" type="password" class="form-control" id="examplePreNom" placeholder="*******">
-                          </div>
-                          <div class="form-group">
-                           <label for="exampleRole">Rôle</label><br>
-                          <select name="ajoutRole">
-                            <?php   $reponse = $bdd->query('SELECT * FROM type_utilisateur');
+                           <label for="exampleRole">Proposé par</label><br>
+                          <select name="ajoutPropriétaire">
+                            <?php   $reponse = $bdd->query('SELECT * FROM utilisateur');
                             while ($donnees = $reponse->fetch()){?>
-                            <option value="<?php echo $donnees['idTYPE_UTILISATEUR'] ?>"><?php echo $donnees['libelle'] ?></option>
+                            <option value="<?php echo $donnees['idUTILISATEUR'];?>"><?php echo $donnees['nom_utilisateur']; echo " "; echo $donnees['prenom_utilisateur']; ?></option>
                             <?php } ?>
                           </select>
                           </div>
                           <div class="form-group">
-                           <label for="exampleRole">AMAP</label><br>
-                          <select name="ajoutAMAP">
-                            <?php   $reponse = $bdd->query('SELECT * FROM amap');
+                           <label for="exampleRole">Type</label><br>
+                          <select name="ajoutType">
+                            <?php   $reponse = $bdd->query('SELECT * FROM type_produit');
                             while ($donnees = $reponse->fetch()){?>
-                            <option value="<?php echo $donnees['idAMAP'] ?>"><?php echo $donnees['nomAMAP'] ?></option>
+                            <option value="<?php echo $donnees['idTYPE_PRODUIT']; ?>"><?php echo $donnees['libelle_type_produit'] ?></option>
                             <?php } ?>
                           </select>
                           </div>
                           <div class="form-group">
-                           <label for="exampleRole">Ville</label><br>
-                          <select name="ajoutVille">
-                            <?php   $reponse = $bdd->query('SELECT * FROM ville');
+                           <label for="exampleRole">Saison</label><br>
+                          <select name="ajoutSaison">
+                            <?php   $reponse = $bdd->query('SELECT * FROM saison');
                             while ($donnees = $reponse->fetch()){?>
-                            <option value="<?php echo $donnees['idVILLE'] ?>"><?php echo $donnees['libelle_ville'] ?></option>
+                            <option value="<?php echo $donnees['idSAISON']; ?>"><?php echo $donnees['libelle_saison'] ?></option>
                             <?php } ?>
                           </select>
                           </div>
@@ -111,12 +103,13 @@ include("header.php");?>
                 <table class="table table-striped table-condensed">
                   <thead>
                   <tr>
-                      <th>Utilisateur N°</th>
-                      <th>Nom</th>
-                      <th>Prenom</th>
-                      <th>Rôle</th>
-                      <th>AMAP</th>
-                      <th>Actions</th>
+                      <th>Produits N°</th>
+                      <th>Libelle</th>
+                      <th>Prix</th>
+                      <th>Type</th>
+                      <th>Saison</th>
+                      <th>Proposé par</th>
+                       <th>Actions</th>
                   </tr>
               </thead>
               <tbody>
@@ -125,35 +118,44 @@ include("header.php");?>
 
 
 
-		        $reponse = $bdd->query('SELECT * FROM utilisateur');
+		        $reponse = $bdd->query('SELECT * FROM produit');
 
 				while ($donnees = $reponse->fetch())
 				{ ?>
 
  				<tr>
-                    <td><?php echo $donnees['idUTILISATEUR'];?></td>
-                    <td><?php echo $donnees['nom_utilisateur'];?></td>
-                    <td><?php echo $donnees['prenom_utilisateur'];?></td>
+                    <td><?php echo $donnees['idProduit'];?></td>
+                    <td><?php echo $donnees['libelle_produit'];?></td>
+                    <td><?php echo $donnees['prix'];?></td>
                     <td>
                     <?php
-                        $reponse2 = $bdd->query('SELECT * FROM type_utilisateur where idTYPE_UTILISATEUR ='.$donnees['TYPE_UTILISATEUR_idTYPE_UTILISATEUR']);
+                        $reponse2 = $bdd->query('SELECT * FROM type_produit where idTYPE_PRODUIT ='.$donnees['TYPE_PRODUIT_idTYPE_PRODUIT']);
                         while ($donnees2 = $reponse2->fetch()){
-                        echo $donnees2['libelle'];
+                        echo $donnees2['libelle_type_produit'];
                         }
                       ?>
                     </td>
                     <td>
                     <?php
-                     $reponse3 = $bdd->query('SELECT * FROM AMAP where idAMAP ='.$donnees['AMAP_idAMAP']);
+                     $reponse3 = $bdd->query('SELECT * FROM saison where idSAISON ='.$donnees['SAISON_idSAISON']);
                         while ($donnees3 = $reponse3->fetch()){
-                        echo $donnees3['nomAMAP'];
+                        echo $donnees3['libelle_saison'];
                         }
                     ?>
                     <td>
-					<button type="submit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#modifUser<?php echo $donnees['idUTILISATEUR'];?>">
+                    <?php
+                        $reponse2 = $bdd->query('SELECT * FROM utilisateur where idUTILISATEUR ='.$donnees['UTILISATEUR_idUtilisateur']);
+                        while ($donnees2 = $reponse2->fetch()){
+                        echo $donnees2['nom_utilisateur']; echo " ";  echo $donnees2['prenom_utilisateur'];
+                        }
+                      ?>
+                    </td>
+                    <td>
+
+					<button type="submit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#modifProduit<?php echo $donnees['idProduit'];?>">
 					<span class="fa fa-pencil fa-fw"></span>
 					</button>
-					<a href="supprimerUtilisateur.php/?id=<?php echo $donnees['idUTILISATEUR'];?>" >
+					<a href="supprimerProduit.php/?id=<?php echo $donnees['idProduit'];?>" >
 					<button type="button" data-bind="click: $parent.remove" class="remove-news btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Delete">
 						<span class="fa fa-trash fa-fw"></span>
 					</button></a>
@@ -169,7 +171,7 @@ include("header.php");?>
 
 
 <!-- Modal modifier utilisateur -->
-<div class="modal fade" id="modifUser<?php echo $donnees['idUTILISATEUR'];?>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="modifProduit<?php echo $donnees['idProduit'];?>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog">
 	<div class="modal-content">
 		<div class="modal-header">

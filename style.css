@@ -565,9 +565,9 @@ li.searchbox.searchbox-open {padding-top: 0;}
   list-style:none;
 }
 .compare_menu ul li a,th,.features_text h5,.disclaimer h5 {
-  font-family: nexa_blackregular;
-  font-size: 18px;
-  font-weight: 400;
+  /*! font-family: nexa_blackregular; */
+  /*! font-size: 18px; */
+  /*! font-weight: 400; */
 }
 .compare_menu ul li a {
   border-left: 2px solid rgb(229, 229, 229);
