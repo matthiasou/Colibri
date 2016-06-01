@@ -15,7 +15,7 @@ include("header.php");?>
                     <li><a href="administration.php">Administration</a></li>
                     <li class="active"><a href="#"><i class="fa fa-users fa-fw"></i> Utilisateurs</a></li>
                     <li><a href="adm_produits.php"><i class="fa fa-shopping-basket fa-fw"></i> Produits</a></li>
-                    <li><a href="#"><i class="fa fa-file-text-o fa-fw"></i> Contrâts</a></li>
+                    <li><a href="adm_contrats.php"><i class="fa fa-file-text-o fa-fw"></i> Contrâts</a></li>
                     <li><a href="#"><i class="fa fa-calendar fa-fw"></i> Signaler absence</a></li>
                     <li><a href="#"><i class="fa fa-tasks fa-fw"></i> Changement AMAP</a></li>
                     <li><a href="#"><i class="fa fa-pencil fa-fw""></i> Créer/Modifier Paniers</a></li>

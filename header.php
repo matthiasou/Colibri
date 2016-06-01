@@ -205,41 +205,92 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="signup">
-                        <form class="form-horizontal">
+                        <form method="post" action="inscription.php" class="form-horizontal">
                             <fieldset>
                                 <!-- Sign Up Form -->
                                 <!-- Text input-->
                                 <div class="control-group">
-                                    <label class="control-label" for="Email">Email:</label>
+                                    <label class="control-label" for="Email">Nom utilisateur:</label>
                                     <div class="controls">
-                                        <input id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                                        <input id="Email" name="ajoutNom" class="form-control" type="text" placeholder="Joe" class="input-large" required="">
                                     </div>
                                 </div>
 
                                 <!-- Text input-->
                                 <div class="control-group">
-                                    <label class="control-label" for="userid">Alias:</label>
+                                    <label class="control-label" for="userid">Prenom utilisateur:</label>
                                     <div class="controls">
-                                        <input id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
+                                        <input id="userid" name="ajoutPrenom" class="form-control" type="text" placeholder="Sixpack" class="input-large" required="">
                                     </div>
                                 </div>
 
                                 <!-- Password input-->
                                 <div class="control-group">
-                                    <label class="control-label" for="password">Mot de passe:</label>
+                                    <label class="control-label" for="password">Adresse:</label>
                                     <div class="controls">
-                                        <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
-                                        <em>1-8 Characters</em>
+                                        <input id="password" name="ajoutAdresse" class="form-control" type="password" placeholder="adresse" class="input-large" required="">
                                     </div>
                                 </div>
 
-                                <!-- Text input-->
                                 <div class="control-group">
-                                    <label class="control-label" for="reenterpassword">Re-Mot de passe:</label>
+                                    <label class="control-label" for="password">Mail:</label>
                                     <div class="controls">
-                                        <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                                        <input id="password" name="ajoutMail" class="form-control" type="password" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
                                     </div>
                                 </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="password">Password:</label>
+                                    <div class="controls">
+                                        <input id="password" name="ajoutPassword" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="password">Rôle:</label>
+                                    <div class="controls">
+                                        <select name="ajoutRole">
+                                            <option value="1">Consomateur</option>
+                                            <option value="2">Producteur</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <label class="control-label" for="password">AMAP:</label>
+                                    <div class="controls">
+                                        <select name="ajoutAMAP">
+
+                                            <?php
+                                            try{
+                                                $bdd = new PDO('mysql:host=localhost;dbname=colibri;charset=utf8', 'root', '');
+                                            }
+                                            catch (Exception $e)
+                                            {
+                                                die('Erreur : ' . $e->getMessage());
+                                            }
+                                            $reponse15 = $bdd->query('SELECT * FROM amap');
+                                            while ($donnees15 = $reponse15->fetch()){?>
+                                                <option value="<?php echo $donnees15['idAMAP'] ?>"><?php echo $donnees15['nomAMAP'] ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="password">Ville:</label>
+                                    <div class="controls">
+                                        <select name="ajoutVille">
+                                            <?php   $reponse = $bdd->query('SELECT * FROM ville');
+                                            while ($donnees = $reponse->fetch()){?>
+                                                <option value="<?php echo $donnees['idVILLE'] ?>"><?php echo $donnees['libelle_ville'] ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+
 
                                 <!-- Button -->
                                 <div class="control-group">

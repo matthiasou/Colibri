@@ -15,7 +15,7 @@ include("header.php");?>
                     <li><a href="administration.php">Administration</a></li>
                     <li><a href="adm_utilisateurs.php"><i class="fa fa-users fa-fw"></i> Utilisateurs</a></li>
                     <li class="active" ><a href="adm_produits.php"><i class="fa fa-shopping-basket fa-fw"></i> Produits</a></li>
-                    <li><a href="#"><i class="fa fa-file-text-o fa-fw"></i> Contrats</a></li>
+                    <li><a href="adm_contrats.php"><i class="fa fa-file-text-o fa-fw"></i> Contrats</a></li>
                     <li><a href="#"><i class="fa fa-calendar fa-fw"></i> Signaler absence</a></li>
                     <li><a href="#"><i class="fa fa-tasks fa-fw"></i> Changement AMAP</a></li>
                     <li><a href="#"><i class="fa fa-pencil fa-fw""></i> Créer/Modifier Paniers</a></li>
@@ -170,7 +170,7 @@ include("header.php");?>
 	</div>
 
 
-<!-- Modal modifier utilisateur -->
+<!-- Modal modifier produit -->
 <div class="modal fade" id="modifProduit<?php echo $donnees['idProduit'];?>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog">
 	<div class="modal-content">
@@ -181,52 +181,45 @@ include("header.php");?>
 		<div class="modal-body">
 
             <!-- content goes here -->
-			<form method="post" action="modifierUtilisateur.php">
+			<form method="post" action="modifierProduit.php">
               <div class="form-group">
-                <label for="exampleInputEmail1">Nom</label>
-                <input name="nom" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['nom_utilisateur'];?>">
+                <label for="exampleInputEmail1">Libelle</label>
+                 <input type="hidden" name="idModif" value="<?php echo $donnees['idProduit'];?>">
+                <input name="libelle" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['libelle_produit'];?>">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputEmail1">Prenom</label>
-                 <input name="prenom" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['prenom_utilisateur'];?>">
-                <input type="hidden" name="idModif" value="<?php echo $donnees['idUTILISATEUR'];?>">
-              </div>
-               <div class="form-group">
-                 <label for="exampleInputEmail1">Adresse</label>
-                 <input name="adresse" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['adresse'];?>">
-              </div>
-              <div class="form-group">
-                 <label for="exampleInputEmail1">Mail</label>
-                 <input name="mail" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['mail'];?>">
-              </div>
-              <div class="form-group">
-                 <label for="exampleInputEmail1">Password</label>
-                 <input name="password" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['password'];?>">
-              </div>
-               <div class="form-group">
-                           <label for="exampleRole">Rôle</label><br>
-                          <select name="role">
-                            <?php   $reponse6 = $bdd->query('SELECT * FROM type_utilisateur');
-                            while ($donnees6 = $reponse6->fetch()){?>
-                            <option value="<?php echo $donnees6['idTYPE_UTILISATEUR'] ?>"><?php echo $donnees6['libelle'] ?></option>
-                            <?php } ?>
-                          </select>
-                          </div>
-              <div class="form-group">
-                           <label for="exampleRole">AMAP</label><br>
-                          <select name="amap">
-                            <?php   $reponse7 = $bdd->query('SELECT * FROM amap');
-                            while ($donnees7 = $reponse7->fetch()){?>
-                            <option value="<?php echo $donnees7['idAMAP'] ?>"><?php echo $donnees7['nomAMAP'] ?></option>
+                           <label for="exampleRole">Type</label><br>
+                          <select name="modifType">
+                            <?php   $reponse9 = $bdd->query('SELECT * FROM type_produit');
+                            while ($donnees9 = $reponse9->fetch()){?>
+                            <option value="<?php echo $donnees9['idTYPE_PRODUIT']; ?>"><?php echo $donnees9['libelle_type_produit'] ?></option>
                             <?php } ?>
                           </select>
                           </div>
                           <div class="form-group">
-                           <label for="exampleRole">Ville</label><br>
-                          <select name="ville">
-                            <?php   $reponse8 = $bdd->query('SELECT * FROM ville');
-                            while ($donnees8 = $reponse8->fetch()){?>
-                            <option value="<?php echo $donnees8['idVILLE'] ?>"><?php echo $donnees8['libelle_ville'] ?></option>
+               <div class="form-group">
+                           <label for="exampleRole">Saison</label><br>
+                          <select name="modifSaison">
+                            <?php   $reponse10 = $bdd->query('SELECT * FROM saison');
+                            while ($donnees10 = $reponse10->fetch()){?>
+                            <option value="<?php echo $donnees10['idSAISON']; ?>"><?php echo $donnees10['libelle_saison'] ?></option>
+                            <?php } ?>
+                          </select>
+                          </div>
+              <div class="form-group">
+                 <label for="exampleInputEmail1">Prix</label>
+                 <input name="modifPrix" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['prix'];?>">
+              </div>
+              <div class="form-group">
+                 <label for="exampleInputEmail1">Image</label>
+                 <input name="modifImage" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donnees['image'];?>">
+              </div>
+                <div class="form-group">
+                           <label for="exampleRole">Proposé par</label><br>
+                          <select name="modifPropriétaire">
+                            <?php   $reponse12 = $bdd->query('SELECT * FROM utilisateur');
+                            while ($donnees12 = $reponse12->fetch()){?>
+                            <option value="<?php echo $donnees12['idUTILISATEUR'];?>"><?php echo $donnees12['nom_utilisateur']; echo " "; echo $donnees12['prenom_utilisateur']; ?></option>
                             <?php } ?>
                           </select>
                           </div>
