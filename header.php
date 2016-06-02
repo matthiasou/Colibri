@@ -331,7 +331,7 @@
                     <div class="form-group">
                         <label for="exampleInpuNom">Nom</label>
                         <input name="nom" type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION["user"]["nom_utilisateur"];?>">
-                        <input type="hidden" name="id" value="<?php echo $_SESSION["user"]["idUTILISATEUR"];?>">
+                        <input type="hidden" name="idModif" value="<?php echo $_SESSION["user"]["idUTILISATEUR"];?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPrenom">Prénom</label>
@@ -346,34 +346,22 @@
                         <input name="adresse" type="text" class="form-control" id="exampleInputRole" value="<?php echo $_SESSION["user"]["adresse"];?>">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputAdresse">Ville</label>
-                        <select class="form-control" id="sel1">
-                            <?php
-                            try{
-                                $bdd = new PDO('mysql:host=localhost;dbname=colibri;charset=utf8', 'root', '');
-                            }
-                            catch (Exception $e)
-                            {
-                                die('Erreur : ' . $e->getMessage());
-                            } ?>
-
-
-
-
-
-                            <option><?php $req = $bdd->prepare('SELECT * FROM VILLE');
-
-                                $resultat = $req->fetch();
-
-                                var_dump($resultat);
-                                ?></option>
-                            <option>3</option>
-                            <option>4</option>
+                        <label for="exampleRole">Ville</label><br>
+                        <select name="ajoutVille">
+                            <?php   $reponse23 = $bdd->query('SELECT * FROM ville');
+                            while ($donnees23 = $reponse23->fetch()){?>
+                                <option value="<?php echo $donnees23['idVILLE'] ?>"><?php echo $donnees23['libelle_ville'] ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputStatus">Amap</label>
-                        <input name="amap" type="text" class="form-control" id="exampleInputStatus" value="amap">
+                        <label for="exampleRole">AMAP</label><br>
+                        <select name="ajoutAMAP">
+                            <?php   $reponse24 = $bdd->query('SELECT * FROM amap');
+                            while ($donnees24 = $reponse24->fetch()){?>
+                                <option value="<?php echo $donnees24['idAMAP'] ?>"><?php echo $donnees24['nomAMAP'] ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-default">Valider</button>

@@ -23,7 +23,7 @@
 		</div>
 
 		<?php if ($_SESSION['produits'] == null){?>
-			<h3 style="color: #0f3e68">Votre panier est vide !</h3>
+				<h3 style="color: #0f3e68">Votre panier est vide !</h3>
 			<br><br><br><br><br><br><br><br><br><br><br><br>
 		<?php }
 		else{

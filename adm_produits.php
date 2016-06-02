@@ -16,11 +16,8 @@ include("header.php");?>
                     <li><a href="adm_utilisateurs.php"><i class="fa fa-users fa-fw"></i> Utilisateurs</a></li>
                     <li class="active" ><a href="adm_produits.php"><i class="fa fa-shopping-basket fa-fw"></i> Produits</a></li>
                     <li><a href="adm_contrats.php"><i class="fa fa-file-text-o fa-fw"></i> Contrats</a></li>
-                    <li><a href="#"><i class="fa fa-calendar fa-fw"></i> Signaler absence</a></li>
-                    <li><a href="#"><i class="fa fa-tasks fa-fw"></i> Changement AMAP</a></li>
-                    <li><a href="#"><i class="fa fa-pencil fa-fw""></i> Créer/Modifier Paniers</a></li>
-                    <li><a href="#"><i class="fa fa-check-square-o fa-fw"></i> Valider Panier</a></li>
-                    <li><a href="#"><i class="fa fa-area-chart fa-fw"></i> Publier Bilan Activité</a></li>
+                    <li><a href="adm_absence.php"><i class="fa fa-calendar fa-fw"></i> Signaler absence</a></li>
+                    <li><a href="adm_panier.php"><i class="fa fa-pencil fa-fw""></i> Définir livraison panier</a></li>
                 </ul>
             </div>
             <div style="color: black " class="col-md-9 well">
@@ -176,7 +173,7 @@ include("header.php");?>
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">—</span><span class="sr-only">Close</span></button>
-			<h3 class="modal-title" id="lineModalLabel">Modification utilisateur</h3>
+			<h3 class="modal-title" id="lineModalLabel">Modification produit</h3>
 		</div>
 		<div class="modal-body">
 

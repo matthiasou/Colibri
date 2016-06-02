@@ -52,7 +52,7 @@ foreach ($data2 as $contrat) {
 }
 
 
-$sql4 = "INSERT INTO panier (idPANIER, date_panier, lieu_panier, TYPE_PANIER_idTYPE_PANIER, CONTRAT_idCONTRAT, idAcheteur, prix) VALUES ('', null, null, null, '".$contrat['idCONTRAT']."', '".$_SESSION['user']['idUTILISATEUR']."', '".$_SESSION['total']."')";
+$sql4 = "INSERT INTO panier (idPANIER, date_panier, lieu_panier, TYPE_PANIER_idTYPE_PANIER, CONTRAT_idCONTRAT, idConsomateur, idProducteur, prix, absent) VALUES ('', null, null, null, '".$contrat['idCONTRAT']."', '".$_SESSION['user']['idUTILISATEUR']."', '".$produits['UTILISATEUR_idUtilisateur']."', '".$_SESSION['total']."', false)";
 $req4 = $bdd->prepare($sql4);
 $req4->execute();
 
