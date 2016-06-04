@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: matthiaslecomte
- * Date: 29/05/2016
- * Time: 23:07
+ * Date: 04/06/2016
+ * Time: 15:12
  */
 include("header.php");?>
     <br><br>
@@ -19,6 +19,8 @@ include("header.php");?>
                             <li><a href="adm_contrats_conso.php"><i class="fa fa-calendar fa-fw"></i> Mes contrats</a></li>
                         <?php }
                         else if($_SESSION['user']['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'] == 2) { ?>
+                            <li class="active"><a href="adm_produits_produ.php"><i class="fa fa-shopping-basket fa-fw""></i> Mes produits</a></li>
+                            <li><a href="adm_contrats_produ.php"><i class="fa fa-file-text fa-fw""></i> Mes contrats</a></li>
                             <li><a href="adm_panier.php"><i class="fa fa-pencil fa-fw""></i> Définir livraison panier</a></li>
                        <?php } else if ($_SESSION['user']['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'] == 3){ ?>
                             <li><a href="adm_utilisateurs.php"><i class="fa fa-users fa-fw"></i> Utilisateurs</a></li>
@@ -122,7 +124,7 @@ include("header.php");?>
 
 
 
-		        $reponse = $bdd->query('SELECT * FROM produit');
+		        $reponse = $bdd->query('SELECT * FROM produit where UTILISATEUR_idUtilisateur ='.$_SESSION['id']);
 
 				while ($donnees = $reponse->fetch())
 				{ ?>

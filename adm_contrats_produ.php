@@ -2,9 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: matthiaslecomte
- * Date: 01/06/2016
- * Time: 22:52
+ * Date: 04/06/2016
+ * Time: 15:09
  */
+
 include("header.php");?>
     <br><br>
 
@@ -16,20 +17,22 @@ include("header.php");?>
                     <?php
                         if ($_SESSION['user']['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'] == 1){?>
                             <li><a href="adm_absence.php"><i class="fa fa-calendar fa-fw"></i> Signaler absence</a></li>
-                            <li><a href="adm_contrats_conso.php"><i class="fa fa-calendar fa-fw"></i> Mes contrats</a></li>
+                            <li class="active"><a href="adm_contrats_conso.php"><i class="fa fa-calendar fa-fw"></i> Mes contrats</a></li>
                         <?php }
                         else if($_SESSION['user']['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'] == 2) { ?>
+                            <li><a href="adm_produits_produ.php"><i class="fa fa-shopping-basket fa-fw""></i> Mes produits</a></li>
+                            <li class="active"><a href="adm_contrats_produ.php"><i class="fa fa-file-text fa-fw""></i> Mes contrats</a></li>
                             <li><a href="adm_panier.php"><i class="fa fa-pencil fa-fw""></i> Définir livraison panier</a></li>
                        <?php } else if ($_SESSION['user']['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'] == 3){ ?>
                             <li><a href="adm_utilisateurs.php"><i class="fa fa-users fa-fw"></i> Utilisateurs</a></li>
                             <li><a href="adm_produits.php"><i class="fa fa-shopping-basket fa-fw"></i> Produits</a></li>
-                            <li class="active"><a href="adm_contrats.php"><i class="fa fa-file-text-o fa-fw"></i> Contrats</a></li>
+                            <li><a href="adm_contrats.php"><i class="fa fa-file-text-o fa-fw"></i> Contrâts</a></li>
                       <?php  } ?>
                 </ul>
             </div>
             <div style="color: black " class="col-md-9 well">
             <div style="color: #0f3e68">
-                <h4><i class="fa fa-file-text-o fa-fw"></i>Contrats</h4>
+                <h4><i class="fa fa-file-text-o fa-fw"></i>Mes contrats</h4>
              </div>
                 <br><br><br>
                 <table class="table table-striped table-condensed">
@@ -50,7 +53,7 @@ include("header.php");?>
 
 
 
-		        $reponse = $bdd->query('SELECT * FROM contrat');
+		        $reponse = $bdd->query('SELECT * FROM contrat where UTILISATEUR_idUTILISATEUR1 ='.$_SESSION['id']);
 
 				while ($donnees = $reponse->fetch())
 				{ ?>
@@ -91,14 +94,12 @@ include("header.php");?>
                       ?>
                     </td>
                     <td>
-
-					<button type="submit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#modifContrat<?php echo $donnees['idCONTRAT'];?>">
-					<span class="fa fa-pencil fa-fw"></span>
-					</button>
-					<a href="supprimerContrat.php/?id=<?php echo $donnees['idCONTRAT'];?>" >
+                    <div style="text-align: center">
+					<a href="supprimerMesContrat.php/?id=<?php echo $donnees['idCONTRAT'];?>" >
 					<button type="button" data-bind="click: $parent.remove" class="remove-news btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Delete">
 						<span class="fa fa-trash fa-fw"></span>
 					</button></a>
+					</div>
 					</td>
 					</tr>
                     </td>
