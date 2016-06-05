@@ -12,7 +12,12 @@ include("header.php");?>
         <div class="row">
             <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="administration.php">Administration</a></li>
+                    <li class="active"><a href="administration.php">Administration   <?php
+                            $reponse2 = $bdd->query('SELECT * FROM type_utilisateur where idTYPE_UTILISATEUR ='.$_SESSION['user']['TYPE_UTILISATEUR_idTYPE_UTILISATEUR']);
+                            while ($donnees2 = $reponse2->fetch()){
+                                echo $donnees2['libelle'];
+                            }
+                            ?></a></li>
                     <?php
                         if ($_SESSION['user']['TYPE_UTILISATEUR_idTYPE_UTILISATEUR'] == 1){?>
                             <li><a href="adm_absence.php"><i class="fa fa-calendar fa-fw"></i> Signaler absence</a></li>

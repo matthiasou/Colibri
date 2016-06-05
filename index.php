@@ -175,7 +175,7 @@
 					</div>
 				</div>
 				<div class="choose_text">
-					<i class="flaticon-tshirt17"></i>
+					<i class="flaticon-lightbulbs"></i>
 					<h5><a href="#">Produits Frais</a></h5>
 					<div class="text_p">
 						<p>Produits frais, de saison sans pésticide ...</p>
