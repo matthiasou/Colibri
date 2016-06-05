@@ -26,11 +26,11 @@
                     <div class="footer_link">
                         <p>Compte </p>
                         <ul>
-                            <li><a href="#">Mon compte</a></li>
-                            <li><a href="cart.php">Panier</a></li>
-                            <li><a href="#">Achats</a></li>
-                            <li><a href="#">Code promo</a></li>
-                            <li><a href="#">Informations</a></li>
+                            <li><a href="index.php">Accueil</a></li>
+                            <li><a href="a_propos.php">A propos</a></li>
+                            <li><a href="produits.php">Les produits</a></li>
+                            <li><a href="magasins.php">Les Magasins</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -38,8 +38,8 @@
                     <div class="footer_link res_mar">
                         <p>Support</p>
                         <ul>
-                            <li><a href="#">Test</a></li>
-                            <li><a href="#">Test</a></li>
+                            <li><a href="volontaire.php">Devenir volontaire</a></li>
+                            <li><a href="creer_amap.php">Créer une AMAP</a></li>
                             <li><a href="#">Test</a></li>
                             <li><a href="#">Test</a></li>
                             <li><a href="#">Test</a></li>
