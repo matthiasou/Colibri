@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 30 Mai 2016 à 00:04
+-- Généré le :  Sam 04 Juin 2016 à 18:06
 -- Version du serveur :  5.6.26
 -- Version de PHP :  5.6.12
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `AMAP` (
   `idAMAP` int(11) NOT NULL,
+  `nomAMAP` text NOT NULL,
   `date_creation` date DEFAULT NULL,
   `adresse` varchar(45) DEFAULT NULL,
   `telephone` varchar(45) DEFAULT NULL,
@@ -39,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `AMAP` (
 -- Contenu de la table `AMAP`
 --
 
-INSERT INTO `AMAP` (`idAMAP`, `date_creation`, `adresse`, `telephone`, `mail`, `MIRAMAP_idMIRAMAP`) VALUES
-(1, '2016-03-18', '43 boulevard de la seine', '0239029301', 'amap@cesi.fr', 1);
+INSERT INTO `AMAP` (`idAMAP`, `nomAMAP`, `date_creation`, `adresse`, `telephone`, `mail`, `MIRAMAP_idMIRAMAP`) VALUES
+(1, 'Ile de France', '2016-03-18', '43 boulevard de la seine', '0239029301', 'amap@cesi.fr', 1);
 
 -- --------------------------------------------------------
 
@@ -68,28 +69,14 @@ CREATE TABLE IF NOT EXISTS `CONTRAT` (
   `SAISON_idSAISON` int(11) NOT NULL,
   `UTILISATEUR_idUTILISATEUR` int(11) NOT NULL,
   `UTILISATEUR_idUTILISATEUR1` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `CONTRAT`
 --
 
 INSERT INTO `CONTRAT` (`idCONTRAT`, `date_debut_contrat`, `date_fin_contrat`, `AMAP_idAMAP`, `SAISON_idSAISON`, `UTILISATEUR_idUTILISATEUR`, `UTILISATEUR_idUTILISATEUR1`) VALUES
-(1, '2016-05-28', '2016-11-28', 1, 1, 1, 1),
-(2, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(3, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(4, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(6, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(7, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(8, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(9, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(10, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(11, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(12, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(13, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(14, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(15, '2016-05-29', '2016-11-29', 1, 1, 1, 1),
-(16, '2016-05-30', '2016-11-30', 1, 1, 1, 1);
+(20, '2016-06-04', '2016-12-04', 1, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -117,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `IDENTITE_BANCAIRE` (
   `dateExpiration` text NOT NULL,
   `ccv` text NOT NULL,
   `UTILISATEUR_idUTILISATEUR` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `IDENTITE_BANCAIRE`
@@ -139,7 +126,17 @@ INSERT INTO `IDENTITE_BANCAIRE` (`idIDENTITE_BANCAIRE`, `numeroCarte`, `dateExpi
 (13, 'kjkjjk', 'hkhkj', 'jkhj', 1),
 (14, 'hjkh', 'hkhjk', 'kjjkh', 1),
 (15, 'sazdaz', 'azddaz', 'dazaz', 1),
-(16, 'HJGGJJ', 'GHJGJ', 'JGHJ', 1);
+(16, 'HJGGJJ', 'GHJGJ', 'JGHJ', 1),
+(17, 'UIIUYUI', 'hiuyiyu', 'yuiu', 1),
+(18, 'UHJJH', 'jjkhhj', 'hk', 1),
+(19, 'fefze', 'dsfdsf', 'fdsfsdfsd', 1),
+(20, 'dfscs', 'dsvs', 'vdd', 1),
+(21, '', '', '', 1),
+(22, '', '', '', 1),
+(23, '', '', '', 1),
+(24, 'd', 'zedzd', 'zdz', 1),
+(25, '', '', '', 1),
+(26, '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -185,30 +182,18 @@ CREATE TABLE IF NOT EXISTS `PANIER` (
   `lieu_panier` varchar(45) DEFAULT NULL,
   `TYPE_PANIER_idTYPE_PANIER` int(11) DEFAULT NULL,
   `CONTRAT_idCONTRAT` int(11) NOT NULL,
-  `idAcheteur` int(11) NOT NULL,
-  `prix` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+  `idConsomateur` int(11) NOT NULL,
+  `idProducteur` int(11) NOT NULL,
+  `prix` int(11) NOT NULL,
+  `absent` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `PANIER`
 --
 
-INSERT INTO `PANIER` (`idPANIER`, `date_panier`, `lieu_panier`, `TYPE_PANIER_idTYPE_PANIER`, `CONTRAT_idCONTRAT`, `idAcheteur`, `prix`) VALUES
-(2, NULL, NULL, NULL, 1, 1, 32),
-(3, NULL, NULL, NULL, 2, 1, 32),
-(4, NULL, NULL, NULL, 3, 1, 32),
-(5, NULL, NULL, NULL, 4, 1, 32),
-(7, NULL, NULL, NULL, 6, 1, 35),
-(8, NULL, NULL, NULL, 7, 1, 14),
-(9, NULL, NULL, NULL, 8, 1, 55),
-(10, NULL, NULL, NULL, 9, 1, 14),
-(11, NULL, NULL, NULL, 10, 1, 18),
-(12, NULL, NULL, NULL, 11, 1, 27),
-(13, NULL, NULL, NULL, 12, 1, 14),
-(14, NULL, NULL, NULL, 13, 1, 18),
-(15, NULL, NULL, NULL, 14, 1, 18),
-(16, NULL, NULL, NULL, 15, 1, 69),
-(17, NULL, NULL, NULL, 16, 1, 18);
+INSERT INTO `PANIER` (`idPANIER`, `date_panier`, `lieu_panier`, `TYPE_PANIER_idTYPE_PANIER`, `CONTRAT_idCONTRAT`, `idConsomateur`, `idProducteur`, `prix`, `absent`) VALUES
+(21, NULL, NULL, NULL, 20, 1, 3, 14, 0);
 
 -- --------------------------------------------------------
 
@@ -224,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `PRODUIT` (
   `TYPE_PRODUIT_idTYPE_PRODUIT` int(11) NOT NULL,
   `SAISON_idSAISON` int(11) NOT NULL,
   `prix` int(11) NOT NULL,
-  `image_mini` text NOT NULL,
+  `image_mini` text,
   `image` text NOT NULL,
   `UTILISATEUR_idUtilisateur` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
@@ -234,14 +219,14 @@ CREATE TABLE IF NOT EXISTS `PRODUIT` (
 --
 
 INSERT INTO `PRODUIT` (`idProduit`, `libelle_produit`, `temporaire`, `permanent`, `TYPE_PRODUIT_idTYPE_PRODUIT`, `SAISON_idSAISON`, `prix`, `image_mini`, `image`, `UTILISATEUR_idUtilisateur`) VALUES
-(1, 'Panier Légumes', NULL, NULL, 1, 1, 13, 'images/legumes12.png', 'images/legumes1.png', 1),
-(2, 'Panier Fruits', NULL, NULL, 2, 1, 14, 'images/fruits12.jpg', 'images/fruits1.jpg', 1),
-(5, 'Panier Viandes', NULL, NULL, 3, 1, 18, 'images/viandes12.jpg', 'images/viandes1.jpg', 1),
-(6, 'Panier Lait', NULL, NULL, 4, 1, 21, 'images/lait2.jpg', 'images/lait.jpg', 1),
-(7, 'Panier Oeufs', NULL, NULL, 5, 1, 23, 'images/oeufs2.jpg', 'images/oeufs.jpg', 1),
-(8, 'Panier Légumes 2', NULL, NULL, 1, 1, 16, 'images/legumes22.png', 'images/legumes2.png', 1),
-(9, 'Panier Fruits 2', NULL, NULL, 2, 1, 14, 'images/fruits22.jpg', 'images/fruits2.jpg', 1),
-(10, 'Panier Viandes 2', NULL, NULL, 3, 1, 28, 'images/viandes22.jpg', 'images/viandes2.jpg', 1);
+(1, 'Panier Légumes', NULL, NULL, 1, 1, 13, 'images/legumes12.png', 'images/legumes1.png', 3),
+(2, 'Panier Fruits', NULL, NULL, 2, 1, 14, 'images/fruits12.jpg', 'images/fruits1.jpg', 3),
+(5, 'Panier Viandes', NULL, NULL, 3, 1, 18, 'images/viandes12.jpg', 'images/viandes1.jpg', 3),
+(6, 'Panier Lait', NULL, NULL, 4, 1, 21, 'images/lait2.jpg', 'images/lait.jpg', 3),
+(7, 'Panier Oeufs', NULL, NULL, 5, 1, 23, 'images/oeufs2.jpg', 'images/oeufs.jpg', 3),
+(8, 'Panier Légumes 2', NULL, NULL, 1, 1, 16, 'images/legumes22.png', 'images/legumes2.png', 3),
+(9, 'Panier Fruits 2', NULL, NULL, 2, 1, 14, 'images/fruits22.jpg', 'images/fruits2.jpg', 3),
+(10, 'Panier Viandes 2', NULL, NULL, 3, 1, 28, 'images/viandes22.jpg', 'images/viandes2.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -380,17 +365,19 @@ CREATE TABLE IF NOT EXISTS `UTILISATEUR` (
   `adresse` varchar(45) DEFAULT NULL,
   `mail` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `TYPE_UTILISATEUR_idTYPE_UTILISATEUR` int(11) NOT NULL,
-  `AMAP_idAMAP` int(11) NOT NULL,
-  `VILLE_idVILLE` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `TYPE_UTILISATEUR_idTYPE_UTILISATEUR` int(11) DEFAULT NULL,
+  `AMAP_idAMAP` int(11) DEFAULT NULL,
+  `VILLE_idVILLE` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `UTILISATEUR`
 --
 
 INSERT INTO `UTILISATEUR` (`idUTILISATEUR`, `nom_utilisateur`, `prenom_utilisateur`, `adresse`, `mail`, `password`, `TYPE_UTILISATEUR_idTYPE_UTILISATEUR`, `AMAP_idAMAP`, `VILLE_idVILLE`) VALUES
-(1, 'matthias', 'lecomte', NULL, 'test', 'test', 2, 1, 3);
+(1, 'matthias', 'lecomte', 'szsz', 'test', 'test', 1, 1, 3),
+(2, 'admin', 'admin', 'admin', 'admin', 'admin', 3, 1, 3),
+(3, 'producteur', 'producteur', 'producteur', 'producteur', 'producteur', 2, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -557,7 +544,7 @@ ALTER TABLE `AMAP`
 -- AUTO_INCREMENT pour la table `CONTRAT`
 --
 ALTER TABLE `CONTRAT`
-  MODIFY `idCONTRAT` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `idCONTRAT` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT pour la table `ENTREPOT_REGIONAL`
 --
@@ -567,7 +554,7 @@ ALTER TABLE `ENTREPOT_REGIONAL`
 -- AUTO_INCREMENT pour la table `IDENTITE_BANCAIRE`
 --
 ALTER TABLE `IDENTITE_BANCAIRE`
-  MODIFY `idIDENTITE_BANCAIRE` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `idIDENTITE_BANCAIRE` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT pour la table `MAGASIN_LOCAL`
 --
@@ -582,7 +569,7 @@ ALTER TABLE `MIRAMAP`
 -- AUTO_INCREMENT pour la table `PANIER`
 --
 ALTER TABLE `PANIER`
-  MODIFY `idPANIER` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `idPANIER` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT pour la table `PRODUIT`
 --
@@ -622,7 +609,7 @@ ALTER TABLE `TYPE_UTILISATEUR`
 -- AUTO_INCREMENT pour la table `UTILISATEUR`
 --
 ALTER TABLE `UTILISATEUR`
-  MODIFY `idUTILISATEUR` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `idUTILISATEUR` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `VILLE`
 --
