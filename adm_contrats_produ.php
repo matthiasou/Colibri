@@ -100,7 +100,7 @@ include("header.php");?>
                     </td>
                     <td>
                     <div style="text-align: center">
-					<a href="supprimerMesContrat.php/?id=<?php echo $donnees['idCONTRAT'];?>" >
+					<a href="supprimerContrat_produ.php/?id=<?php echo $donnees['idCONTRAT'];?>" >
 					<button type="button" data-bind="click: $parent.remove" class="remove-news btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Delete">
 						<span class="fa fa-trash fa-fw"></span>
 					</button></a>

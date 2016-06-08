@@ -20,6 +20,9 @@
 				<li><a href="#">Home</a></li>
 				<li class="active">Panier</li>
 			</ol>
+			<div style="color: #cb1d1d">
+				En validant vos Paniers, vous signez automatiquement les signats semestriels et vous vous engagez à venir chercher vos paniers
+			</div>
 		</div>
 
 		<?php if ($_SESSION['produits'] == null){?>

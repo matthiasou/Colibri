@@ -166,7 +166,7 @@ include("header.php");?>
 					<button type="submit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#modifProduit<?php echo $donnees['idProduit'];?>">
 					<span class="fa fa-pencil fa-fw"></span>
 					</button>
-					<a href="supprimerProduit.php/?id=<?php echo $donnees['idProduit'];?>" >
+					<a href="supprimerProduit_produ.php/?id=<?php echo $donnees['idProduit'];?>" >
 					<button type="button" data-bind="click: $parent.remove" class="remove-news btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Delete">
 						<span class="fa fa-trash fa-fw"></span>
 					</button></a>
@@ -192,7 +192,7 @@ include("header.php");?>
 		<div class="modal-body">
 
             <!-- content goes here -->
-			<form method="post" action="modifierProduit.php">
+			<form method="post" action="modifierProduit_produ.php">
               <div class="form-group">
                 <label for="exampleInputEmail1">Libelle</label>
                  <input type="hidden" name="idModif" value="<?php echo $donnees['idProduit'];?>">

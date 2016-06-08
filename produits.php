@@ -52,7 +52,7 @@
                 <img src="<?php echo $produits["image"];?>" alt="" />
                 <div class="caption">
                     <h3><?php echo $produits["libelle_produit"];?></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p><?php echo $produits["contenu"];?></p>
 
                     <p>
 
