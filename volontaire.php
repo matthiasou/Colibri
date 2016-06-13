@@ -12,7 +12,6 @@
         <h5>Vous souhaitez devenir volontaire ? </h5>
 
 
-
     <br/><br/><br/>
     <h5 style="font-size: smaller">Il suffit de cliquer ici ->
         <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contact" data-original-title>
