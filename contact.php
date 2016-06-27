@@ -20,7 +20,7 @@
                         <br>
                         <div class="form-group">
                             <div class="col-sm-6">
-                                <input type="email" class="form-control" id="inputEmail2" placeholder="Tel">
+                                <input type="text" class="form-control" id="inputEmail2" placeholder="Tel">
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" id="inputSubject" placeholder="Objet">
